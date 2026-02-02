@@ -38,8 +38,10 @@ export function HeroSection() {
           </div>
 
           {/* Heading */}
-          <h1 className="font-KhmerOSMoulLight text-xl sm:text-2xl md:text-3xl lg:text-4xl text-balance leading-tight">
-            មន្ទីរអប់រំ យុវជន និងកីឡាខេត្តកំពង់ឆ្នាំង
+          <h1 className="font-KhmerOSMoulLight block text-xl sm:text-2xl md:text-3xl lg:text-4xl text-balance leading-relaxed">
+            មន្ទីរអប់រំ យុវជន និងកីឡា
+            <br />
+            ខេត្តកំពង់ឆ្នាំង
             <span className="font-KhmerOSMoulLight block text-primary text-lg sm:text-xl md:text-2xl lg:text-3xl mt-6 sm:mt-8 leading-relaxed">
               ការប្រកួតកីឡាសិស្សបឋមសិក្សា និងមធ្យមសិក្សា
               ជ្រើសរើសជើងឯកថ្នាក់ខេត្ត ឆ្នាំសិក្សា ២០២៥-២០២៦
@@ -51,32 +53,33 @@ export function HeroSection() {
             <button
               onClick={() =>
                 document
-                  .getElementById("agenda")
+                  .getElementById("sports")
                   ?.scrollIntoView({ behavior: "smooth" })
               }
-              className="px-6 sm:px-8 py-3 sm:py-4 bg-primary text-primary-foreground rounded-lg font-semibold hover:scale-105 transition-transform shadow-lg"
+              className="px-6 sm:px-8 py-3 sm:py-4 bg-primary text-primary-foreground rounded-lg hover:scale-105 transition-transform shadow-lg"
+              style={{ fontFamily: "'MiSansKhmer_Semibold'" }}
             >
               ប្រភេទកីឡា
             </button>
             <button
               onClick={() =>
                 document
-                  .getElementById("sports")
+                  .getElementById("agenda")
                   ?.scrollIntoView({ behavior: "smooth" })
               }
-              className="px-6 sm:px-8 py-3 sm:py-4 bg-accent text-accent-foreground rounded-lg font-semibold hover:scale-105 transition-transform shadow-lg"
+              className="px-6 sm:px-8 py-3 sm:py-4 bg-accent text-accent-foreground rounded-lg hover:scale-105 transition-transform shadow-lg"
+              style={{ fontFamily: "'MiSansKhmer_Semibold'" }}
             >
-              ការប្រកួត
+              កាលវិភាគ
             </button>
             <button
               onClick={() =>
-                document
-                  .getElementById("sports")
-                  ?.scrollIntoView({ behavior: "smooth" })
+                window.open('https://t.me/KPCHPrimaryandHighSchoolGame2026', '_blank')
               }
-              className="px-6 sm:px-8 py-3 sm:py-4 bg-chart-3 text-accent-foreground rounded-lg font-semibold hover:scale-105 transition-transform shadow-lg"
+              className="px-6 sm:px-8 py-3 sm:py-4 bg-chart-3 text-accent-foreground rounded-lg hover:scale-105 transition-transform shadow-lg"
+              style={{ fontFamily: "'MiSansKhmer_Semibold'" }}
             >
-              ចូលទៅក្នុងតេលេក្រាមសម្រាប់ព័ត៌មាន
+              ព័ត៌មានបន្ថែម​ (តេលេក្រាម)
             </button>
           </div>
         </div>

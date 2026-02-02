@@ -6,12 +6,20 @@ import { Footer } from "@/components/footer"
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
+    <main>
       <Navbar />
       <HeroSection />
-      <AgendaSection />
-      <SportsSection />
-      <Footer />
+      <div className="text-4xl text-center">
+        <h1>On Processing...</h1>
+      </div>
+      
     </main>
+    // <main className="min-h-screen">
+    //   <Navbar />
+    //   <HeroSection />
+    //   <AgendaSection />
+    //   <SportsSection />
+    //   <Footer />
+    // </main>
   )
 }
