@@ -25,10 +25,10 @@ export function Navbar() {
   }
 
   const menuItems = [
-    { label: "Home", id: "home" },
-    { label: "Agenda", id: "agenda" },
-    { label: "Sports", id: "sports" },
-    { label: "About", id: "about" },
+    { label: "ទំព័រមុខ", id: "home" },
+    { label: "ប្រភេទកីឡា", id: "agenda" },
+    { label: "ការប្រកួត", id: "sports" },
+    { label: "អំពីយើង", id: "about" },
   ]
 
   return (
@@ -39,13 +39,13 @@ export function Navbar() {
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-20">
-          {/* Logo */}
+          {/* Logo
           <button onClick={() => scrollToSection("home")} className="flex items-center space-x-2 group">
             <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform">
               <span className="text-primary-foreground font-bold text-xl">HS</span>
             </div>
             <span className="font-bold text-lg hidden sm:block">Sports 2025</span>
-          </button>
+          </button> */}
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-1">

@@ -3,6 +3,34 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* Using @font-face */
+@font-face {
+    font-family: 'KhmerOSMoulLight';
+    src: url('../fonts/KhmerOS_muollight.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'MiSansKhmer_Bold';
+    src: url('../fonts/MiSansKhmer-Bold.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'MiSansKhmer_Semibold';
+    src: url('../fonts/MiSansKhmer-Semibold.ttf') format('truetype');
+}
+
+body {
+    font-family: 'KhmerOSMoulLight', 'MiSansKhmer_Bold', 'MiSansKhmer_Semibold', sans-serif;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    background: linear-gradient(to bottom, #ffd700 0%, #ffed4e 15%, #c8e6c9 35%, #80deea 55%, #4dd0e1 70%, #f5f5f5 100%);
+    background-attachment: fixed;
+    @apply text-foreground;
+  }
+}
 :root {
   /* Updated theme colors for sports competition with energetic accent colors */
   --background: oklch(0.99 0 0);
