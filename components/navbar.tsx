@@ -39,14 +39,6 @@ export function Navbar() {
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-20">
-          {/* Logo
-          <button onClick={() => scrollToSection("home")} className="flex items-center space-x-2 group">
-            <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform">
-              <span className="text-primary-foreground font-bold text-xl">HS</span>
-            </div>
-            <span className="font-bold text-lg hidden sm:block">Sports 2025</span>
-          </button> */}
-
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-1">
             {menuItems.map((item) => (
@@ -78,7 +70,7 @@ export function Navbar() {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="block w-full text-left px-4 py-3 hover:bg-muted rounded-lg transition-colors"
+                className="block bg-white w-full text-left px-4 py-3 hover:bg-muted rounded-lg transition-colors"
               >
                 {item.label}
               </button>
