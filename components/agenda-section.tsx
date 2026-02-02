@@ -5,81 +5,669 @@ import { Clock, MapPin } from "lucide-react"
 
 const agendaData = [
   {
-    time: "08:00 AM",
-    activity: "Registration & Check-in",
-    description: "Athletes and coaches check-in at the main entrance",
-    location: "Main Hall",
+    day: 3,
+    date: "ថ្ងៃអង្គារ ទី៣ ខែកុម្ភៈ ឆ្នាំ២០២៦",
+    matches: [
+      {
+        type: "kid",
+        gender: "boy",
+        sport: "បាល់ទាត់ (កុមារា)",
+        time: "08:30 AM",
+        location: "ពហុកីឡដ្ឋានខេត្ត",
+        battles: [
+          { team1: "ស្រុកបរិបូណ៌", team2: "ស្រុករលាប្អៀរ" },        ]
+      },
+      {
+        type: "kid",
+        gender: "boy",
+        sport: "បាល់ទាត់ (កុមារា)",
+        time: "02:30 PM",
+        location: "ពហុកីឡដ្ឋានខេត្ត",
+        battles: [
+          { team1: "ស្រុកជលគិរី", team2: "ក្រុងកំពង់ឆ្នាំង" },        ]
+      },
+      {
+        type: "kid",
+        gender: "girl",
+        sport: "បាល់ទាត់ (កុមារី)",
+        time: "09:20 AM",
+        location: "ពហុកីឡដ្ឋានខេត្ត",
+        battles: [
+          { team1: "ស្រុកកំពង់ត្រឡាច", team2: "ស្រុករលាប្អៀរ" },        ]
+      },
+      {
+        type: "kid",
+        gender: "girl",
+        sport: "បាល់ទាត់ (កុមារី)",
+        time: "03:20 PM",
+        location: "ពហុកីឡដ្ឋានខេត្ត",
+        battles: [
+          { team1: "ស្រុកកំពង់លែង", team2: "ស្រុកទឹកផុស" },        ]
+      },
+      {
+        type: "kid",
+        gender: "boy",
+        sport: "បាល់ទះ (កុមារា)",
+        time: "02:00 PM",
+        location: "ពហុកីឡដ្ឋានខេត្ត​ (ទីលាន III)",
+        battles: [
+          { team1: "ស្រុកជលគិរី", team2: "ស្រុកទឹកផុស" },        ]
+      },
+      {
+        type: "kid",
+        gender: "boy",
+        sport: "បាល់ទះ (កុមារា)",
+        time: "03:00 PM",
+        location: "ពហុកីឡដ្ឋានខេត្ត​ (ទីលាន III)",
+        battles: [
+          { team1: "ស្រុកសាមគ្គីមានជ័យ", team2: "ស្រុកកំពង់លែង" },        ]
+      },
+      {
+        type: "kid",
+        gender: "girl",
+        sport: "បាល់ទះ (កុមារី)",
+        time: "08:00 AM",
+        location: "ពហុកីឡដ្ឋានខេត្ត​ (ទីលាន III)",
+        battles: [
+          { team1: "ក្រុងកំពង់ឆ្នាំង", team2: "ស្រុកទឹកផុស" },        ]
+      },
+      {
+        type: "kid",
+        gender: "boy",
+        sport: "បាល់បោះ (កុមារា)",
+        time: "08:30 AM",
+        location: "ពហុកីឡដ្ឋានខេត្ត",
+        battles: [
+          { team1: "ស្រុកកំពង់លែង", team2: "ស្រុកបរិបូណ៌" },        ]
+      },
+      {
+        type: "kid",
+        gender: "girl",
+        sport: "បាល់បោះ (កុមារី)",
+        time: "08:00 AM",
+        location: "ពហុកីឡដ្ឋានខេត្ត",
+        battles: [
+          { team1: "ស្រុកកំពង់ត្រឡាច", team2: "ស្រុកបរិបូណ៌" },        ]
+      },
+      {
+        type: "kid",
+        gender: "boy",
+        sport: "ប៊ូល និងប៉េតង់ (កុមារា) វិញ្ញាសា៖ ១នាក់ ទល់ ១នាក់",
+        time: "02:00 PM",
+        location: "ពហុកីឡដ្ឋានខេត្ត (N/A)",
+        battles: [
+          { team1: "ស្រុករលាប្អៀរ", team2: "ស្រុកសាមគ្គីមានជ័យ" },
+          { team1: "ក្រុងកំពង់ឆ្នាំង", team2: "ស្រុកកំពង់ត្រឡាច" },
+          { team1: "ស្រុកទឹកផុស", team2: "ស្រុកកំពង់លែង" },
+          { team1: "ស្រុកជលគីរី", team2: "ស្រុកបរិបូណ៌" },        ]
+      },
+             {
+        type: "adult",
+        gender: "boy",
+        sport: "បាល់ទាត់ (យុវជន)",
+        time: "02:30 PM",
+        location: "មុខសាលាខេត្ត",
+        battles: [
+          { team1: "ស្រុកកំពង់លែង", team2: "ស្រុកកំពង់ត្រឡាច" },
+        ]
+      },
+      {
+        type: "adult",
+        gender: "girl",
+        sport: "បាល់ទាត់ (នារី)",
+        time: "08:15 AM",
+        location: "មុខសាលាខេត្ត",
+        battles: [
+          { team1: "ស្រុកកំពង់លែង", team2: "ស្រុករលាប្អៀរ" },
+        ]
+      },
+      {
+        type: "adult",
+        gender: "girl",
+        sport: "បាល់ទាត់ (នារី)",
+        time: "09:30 AM",
+        location: "មុខសាលាខេត្ត",
+        battles: [
+          { team1: "ស្រុកបរិបូរណ៌", team2: "ស្រុកជលគីរី" },
+        ]
+      },
+      {
+        type: "adult",
+        gender: "boy",
+        sport: "បាល់ទះ (យុវជន)",
+        time: "08:00 AM",
+        location: "ពហុកីឡដ្ឋានខេត្ត (ទីលាន II)",
+        battles: [
+          { team1: "ក្រុងកំពង់ឆ្នាំង", team2: "ស្រុកកំពង់ត្រឡាច" },
+        ]
+      },
+      {
+        type: "adult",
+        gender: "boy",
+        sport: "បាល់ទះ (យុវជន)",
+        time: "02:00 PM",
+        location: "ពហុកីឡដ្ឋានខេត្ត (ទីលាន II)",
+        battles: [
+          { team1: "ក្ស្រុកកំពង់លែង", team2: "ស្រុកជលគីរី" },
+        ]
+      },
+      {
+        type: "adult",
+        gender: "girl",
+        sport: "បាល់ទះ (នារី)",
+        time: "08:00 AM",
+        location: "ពហុកីឡដ្ឋានខេត្ត (ទីលាន I)",
+        battles: [
+          { team1: "ស្រុកកំពង់លែង", team2: "ស្រុករលាប្អៀរ" },
+        ]
+      },
+      {
+        type: "adult",
+        gender: "girl",
+        sport: "បាល់ទះ (នារី)",
+        time: "02:00 PM",
+        location: "ពហុកីឡដ្ឋានខេត្ត (ទីលាន I)",
+        battles: [
+          { team1: "ស្រុកសាមគ្គីមានជ័យ", team2: "ស្រុកបរិបូរណ៌" },
+        ]
+      },
+      {
+        type: "adult",
+        gender: "boy",
+        sport: "បាល់បោះ (យុវជន)",
+        time: "02:00 PM",
+        location: "ពហុកីឡដ្ឋានខេត្តកំពង់ឆ្នាំង",
+        battles: [
+          { team1: "ក្រុងកំពង់ឆ្នាំង", team2: "ស្រុកសាមគ្គីមានជ័យ" },
+        ]
+      },
+      {
+        type: "adult",
+        gender: "girl",
+        sport: "បាល់បោះ (នារី)",
+        time: "09:00 AM",
+        location: "ពហុកីឡដ្ឋានខេត្តកំពង់ឆ្នាំង",
+        battles: [
+          { team1: "ក្រុងកំពង់ឆ្នាំង", team2: "ស្រុកបរិបូរណ៌" },
+        ]
+      },
+      {
+        type: "adult",
+        gender: "girl",
+        sport: "បាល់បោះ (នារី)",
+        time: "03:00 PM",
+        location: "ពហុកីឡដ្ឋានខេត្តកំពង់ឆ្នាំង",
+        battles: [
+          { team1: "ស្រុកកំពង់ត្រឡាច", team2: "ស្រុកសាមគ្គីមានជ័យ" },
+        ]
+      },
+      {
+        type: "adult",
+        gender: "girl",
+        sport: "ប៊ូល និងប៉េតង់ (នារី) វិញ្ញាសា៖ ៣នាក់ ទល់ ៣នាក់",
+        time: "08:00 AM",
+        location: "N/A",
+        battles: [
+          { team1: "ស្រុករលាប្អៀរ", team2: "ក្រុងកំពង់ឆ្នាំង" },
+          { team1: "ស្រុកបរិបូរណ៌", team2: "ស្រុកទឹកផុស" },
+          { team1: "ស្រុកសាមគ្គីមានជ័យ", team2: "ស្រុកកំពង់លែង" },
+          { team1: "ស្រុកកំពង់ត្រឡាច", team2: "ស្រុកជលគីរី" },
+        ]
+      },
+      {
+        type: "adult",
+        gender: "boy",
+        sport: "ប៊ូល និងប៉េតង់ (យុវជន) វិញ្ញាសា៖ ៣នាក់ ទល់ ៣នាក់",
+        time: "02:00 PM",
+        location: "N/A",
+        battles: [
+          { team1: "ក្រុងកំពង់ឆ្នាំង", team2: "ស្រុកទឹកផុស" },
+          { team1: "ស្រុកបរិបូរណ៌", team2: "ស្រុកកំពង់ត្រឡាច" },
+          { team1: "ស្រុករលាប្អៀរ", team2: "ស្រុកកំពង់លែង" },
+          { team1: "ស្រុកសាមគ្គីមានជ័យ", team2: "ស្រុកជលគីរី" },
+        ]
+      },
+    ]
   },
   {
-    time: "08:45 AM",
-    activity: "Opening Ceremony",
-    description: "Welcome address and national anthem",
-    location: "Central Stadium",
+    day: 4,
+    date: "ថ្ងៃពុធ ទី៤ ខែកុម្ភៈ ឆ្នាំ២០២៦",
+    matches: [
+      {
+        type: "kid",
+        gender: "boy",
+        sport: "បាល់ទាត់ (កុមារា)",
+        time: "09:20 AM",
+        location: "ពហុកីឡដ្ឋានខេត្ត",
+        battles: [
+          { team1: "ស្រុកទឹកផុស", team2: "ស្រុកកំពង់លែង" },        ]
+      },
+      {
+        type: "kid",
+        gender: "girl",
+        sport: "បាល់ទាត់ (កុមារី)",
+        time: "08:30 AM",
+        location: "ពហុកីឡដ្ឋានខេត្ត",
+        battles: [
+          { team1: "ស្រុកសាមគ្គីមានជ័យ", team2: "ក្រុងកំពង់ឆ្នាំង" },        ]
+      },
+      {
+        type: "kid",
+        gender: "boy",
+        sport: "បាល់បោះ (កុមារា)",
+        time: "08:00 AM",
+        location: "ពហុកីឡដ្ឋានខេត្ត",
+        battles: [
+          { team1: "ស្រុករលាប្អៀរ", team2: "ក្រុងកំពង់ឆ្នាំង" },        ]
+      },
+      {
+        type: "kid",
+        gender: "girl",
+        sport: "អត្តពលកម្ម (កុមារី)​ វិញ្ញាសា៖ លោតចម្ងាយ",
+        time: "08:00 AM",
+        location: "ពហុកីឡដ្ឋានខេត្ត",
+        battles: []
+      },
+      {
+        type: "kid",
+        gender: "boy",
+        sport: "អត្តពលកម្ម (កុមារា)​ វិញ្ញាសា៖ លោតចម្ងាយ",
+        time: "08:30 AM",
+        location: "ពហុកីឡដ្ឋានខេត្ត",
+        battles: []
+      },
+      {
+        type: "adult",
+        gender: "boy",
+        sport: "បាល់ទាត់ (យុវជន)",
+        time: "01:30 PM",
+        location: "មុខសាលាខេត្ត",
+        battles: [
+          { team1: "ក្រុងកំពង់ឆ្នាំង", team2: "ស្រុកសាមគ្គីមានជ័យ" },
+        ]
+      },
+      {
+        type: "adult",
+        gender: "boy",
+        sport: "បាល់បោះ (យុវជន)",
+        time: "09:00 AM",
+        location: "ពហុកីឡដ្ឋានខេត្ត",
+        battles: [
+          { team1: "ស្រុករលាប្អៀរ", team2: "ស្រុកបរិបូរណ៌" },
+        ]
+      },
+      {
+        type: "adult",
+        gender: "girl",
+        sport: "អត្តពលកម្ម (នារី) វិញ្ញាសា៖ រត់ ៣០០០ម៉ែត្រ",
+        time: "08:00 AM",
+        location: "ពហុកីឡដ្ឋានខេត្ត",
+        battles:[]
+      },
+      {
+        type: "adult",
+        gender: "boy",
+        sport: "អត្តពលកម្ម (យុវជន) វិញ្ញាសា៖ រត់ ៣០០០ម៉ែត្រ",
+        time: "08:00 AM",
+        location: "ពហុកីឡដ្ឋានខេត្ត",
+        battles:[]
+      },
+
+    ]
   },
   {
-    time: "09:30 AM",
-    activity: "Football - Boys Preliminary",
-    description: "Group stage matches begin",
-    location: "Field A",
+    day: 5,
+    date: "ថ្ងៃព្រហស្បតិ៍ ទី៥ ខែកុម្ភៈ ឆ្នាំ២០២៦",
+    matches: [
+      {
+        type: "kid",
+        gender: "boy",
+        sport: "បាល់ទាត់ (កុមារា)",
+        time: "02:30 PM",
+        location: "ពហុកីឡដ្ឋានខេត្ត",
+        battles: [
+          { team1: "ស្រុកសាមគ្គីមានជ័យ", team2: "ស្រុកកំពង់ត្រឡាច" },        ]
+      },
+      {
+        type: "kid",
+        gender: "girl",
+        sport: "បាល់ទាត់ (កុមារី)",
+        time: "03:20 PM",
+        location: "ពហុកីឡដ្ឋានខេត្ត",
+        battles: [
+          { team1: "ស្រុកបរិបូណ៌", team2: "ស្រុកជលគិរី" },        ]
+      },
+      {
+        type: "kid",
+        gender: "boy",
+        sport: "បាល់ទះ (កុមារា)",
+        time: "08:00 AM",
+        location: "ពហុកីឡដ្ឋានខេត្ត​ (ទីលាន III)",
+        battles: [
+          { team1: "ស្រុករលាប្អៀរ", team2: "ស្រុកកំពង់ត្រឡាច" },        ]
+      },
+      {
+        type: "kid",
+        gender: "boy",
+        sport: "បាល់ទះ (កុមារា)",
+        time: "09:00 AM",
+        location: "ពហុកីឡដ្ឋានខេត្ត​ (ទីលាន III)",
+        battles: [
+          { team1: "ក្រុងកំពង់ឆ្នាំង", team2: "ស្រុកបរិបូណ៌" },        ]
+      },
+      {
+        type: "kid",
+        gender: "girl",
+        sport: "បាល់ទះ (កុមារី)",
+        time: "02:00 PM",
+        location: "ពហុកីឡដ្ឋានខេត្ត​ (ទីលាន III)",
+        battles: [
+          { team1: "ស្រុកកំេពង់ត្រឡាច", team2: "ស្រុកសាមគ្គីមានជ័យ" },        ]
+      },
+      {
+        type: "kid",
+        gender: "girl",
+        sport: "បាល់ទះ (កុមារី)",
+        time: "03:00 PM",
+        location: "ពហុកីឡដ្ឋានខេត្ត​ (ទីលាន III)",
+        battles: [
+          { team1: "ស្រុកបរិបូណ៌", team2: "ស្រុករលាប្អៀរ" },        ]
+      },
+      {
+        type: "kid",
+        gender: "girl",
+        sport: "បាល់បោះ (កុមារី)",
+        time: "08:00 AM",
+        location: "ពហុកីឡដ្ឋានខេត្ត",
+        battles: [
+          { team1: "ស្រុករលាប្អៀរ", team2: "ក្រុងកំពង់ឆ្នាំង" },        ]
+      },
+      {
+        type: "kid",
+        gender: "boy",
+        sport: "បាល់បោះ (កុមារា)",
+        time: "08:30 AM",
+        location: "ពហុកីឡដ្ឋានខេត្ត",
+        battles: [
+          { team1: "ស្រុកកំពង់ត្រឡាច", team2: "ក្រុមឈ្នះ" },        ]
+      },
+      {
+        type: "kid",
+        gender: "girl",
+        sport: "អត្តពលកម្ម (កុមារី)​ វិញ្ញាសា៖ រត់​ ៦០ម៉ែត្រ",
+        time: "08:00 AM",
+        location: "ពហុកីឡដ្ឋានខេត្ត",
+        battles: []
+      },
+      {
+        type: "kid",
+        gender: "boy",
+        sport: "អត្តពលកម្ម (កុមារា)​ វិញ្ញាសា៖ រត់​ ៦០ម៉ែត្រ",
+        time: "08:30 AM",
+        location: "ពហុកីឡដ្ឋានខេត្ត",
+        battles: []
+      },
+      {
+        type: "kid",
+        gender: "boy",
+        sport: "អត្តពលកម្ម​ (កុមារ) វិញ្ញាសា៖ ចោលកូនបាល់",
+        time: "02:30 PM",
+        location: "ពហុកីឡដ្ឋានខេត្ត",
+        battles: []
+      },
+      {
+        type: "kid",
+        gender: "boy",
+        sport: "អត្តពលកម្ម​ (កុមារ) វិញ្ញាសា៖ ចោលដំបងមានកន្ទុយ",
+        time: "03:30 PM",
+        location: "ពហុកីឡដ្ឋានខេត្ត",
+        battles: []
+      },
+      {
+        type: "adult",
+        gender: "boy",
+        sport: "បាល់ទាត់ (យុវជន)",
+        time: "09:30 AM",
+        location: "មុខសាលាខេត្ត",
+        battles: [
+          { team1: "ស្រុករលាប្អៀរ", team2: "ស្រុកជលគីរី" },
+        ]
+      },
+      {
+        type: "adult",
+        gender: "boy",
+        sport: "បាល់ទាត់ (យុវជន)",
+        time: "01:30 PM",
+        location: "មុខសាលាខេត្ត",
+        battles: [
+          { team1: "ស្រុកបរិបូរណ៌", team2: "ស្រុកទឹកផុស" },
+        ]
+      },
+      {
+        type: "adult",
+        gender: "girl",
+        sport: "បាល់ទាត់ (នារី)",
+        time: "08:15 AM",
+        location: "មុខសាលាខេត្ត",
+        battles: [
+          { team1: "ស្រុកសាមគ្គីមានជ័យ", team2: "ក្រុងកំពង់ឆ្នាំង" },
+        ]
+      },
+      {
+        type: "adult",
+        gender: "girl",
+        sport: "បាល់ទាត់ (នារី)",
+        time: "03:00 PM",
+        location: "មុខសាលាខេត្ត",
+        battles: [
+          { team1: "ស្រុកទឹកផុស", team2: "ស្រុកកំពង់ត្រឡាច" },
+        ]
+      },
+      {
+        type: "adult",
+        gender: "boy",
+        sport: "បាល់ទះ (យុវជន)",
+        time: "08:00 AM",
+        location: "កីឡដ្ឋានខេត្ត (ទីលាន II)",
+        battles: [
+          { team1: "ស្រុកបរិបូរណ៌", team2: "ស្រុកសាមគ្គីមានជ័យ" },
+        ]
+      },
+      {
+        type: "adult",
+        gender: "boy",
+        sport: "បាល់ទះ (យុវជន)",
+        time: "02:00 PM",
+        location: "កីឡដ្ឋានខេត្ត (ទីលាន II)",
+        battles: [
+          { team1: "ស្រុករលាប្អៀរ", team2: "ស្រុកទឹកផុស" },
+        ]
+      },
+      {
+        type: "adult",
+        gender: "girl",
+        sport: "បាល់ទះ (នារី)",
+        time: "08:00 AM",
+        location: "កីឡដ្ឋានខេត្ត (ទីលាន I)",
+        battles: [
+          { team1: "ស្រុកជលគីរី", team2: "ស្រុកកំពង់ត្រឡាច" },
+        ]
+      },
+      {
+        type: "adult",
+        gender: "girl",
+        sport: "បាល់ទាត់ (នារី)",
+        time: "02:00 PM",
+        location: "កីឡដ្ឋានខេត្ត (ទីលាន I)",
+        battles: [
+          { team1: "ស្រុកទឹកផុស", team2: "ក្រុងកំពង់ឆ្នាំង" },
+        ]
+      },
+      {
+        type: "adult",
+        gender: "girl",
+        sport: "អត្តពលកម្ម (នារី) វិញ្ញាសា៖ លោតកម្ពស់",
+        time: "08:00 AM",
+        location: "ពហុកីឡដ្ឋានខេត្ត",
+        battles:[]
+      },
+      {
+        type: "adult",
+        gender: "boy",
+        sport: "អត្តពលកម្ម (យុវជន) វិញ្ញាសា៖ លោតកម្ពស់",
+        time: "08:30 AM",
+        location: "ពហុកីឡដ្ឋានខេត្ត",
+        battles:[]
+      },
+      {
+        type: "adult",
+        gender: "boy",
+        sport: "អត្តពលកម្ម (យុវជន) វិញ្ញាសា៖ ចោលដុំដែក ៣ គ.ក",
+        time: "02:30 PM",
+        location: "ពហុកីឡដ្ឋានខេត្ត",
+        battles:[]
+      },
+      {
+        type: "adult",
+        gender: "girl",
+        sport: "អត្តពលកម្ម (នារី) វិញ្ញាសា៖ ចោលដុំដែក ៥ គ.ក",
+        time: "03:30 PM",
+        location: "ពហុកីឡដ្ឋានខេត្ត",
+        battles:[]
+      },
+
+    ]
   },
   {
-    time: "09:30 AM",
-    activity: "Volleyball - Girls Preliminary",
-    description: "Pool play rounds start",
-    location: "Court 1 & 2",
+    day: 6,
+    date: "ថ្ងៃសុក្រ ទី៦ ខែកុម្ភៈ ឆ្នាំ២០២៦",
+    matches: [
+      {
+        type: "kid",
+        gender: "girl",
+        sport: "អត្តពលកម្ម (កុមារី)​ វិញ្ញាសា៖ រត់​ ១០០០ម៉ែត្រ",
+        time: "08:00 AM",
+        location: "ពហុកីឡដ្ឋានខេត្ត",
+        battles: []
+      },
+      {
+        type: "kid",
+        gender: "boy",
+        sport: "អត្តពលកម្ម (កុមារា)​ វិញ្ញាសា៖ រត់​ ១០០០ម៉ែត្រ",
+        time: "08:30 AM",
+        location: "ពហុកីឡដ្ឋានខេត្ត",
+        battles: []
+      },
+      {
+        type: "kid",
+        gender: "boy",
+        sport: "អត្តពលកម្ម​ (កុមារ) វិញ្ញាសា៖ រត់ឆ្លងកាត់ឧបសគ្គ (២៥មx២)",
+        time: "02:30 PM",
+        location: "ពហុកីឡដ្ឋានខេត្ត",
+        battles: []
+      },
+      {
+        type: "kid",
+        gender: "boy",
+        sport: "អត្តពលកម្ម​ (កុមារ) វិញ្ញាសា៖ លោតជើងពីរទៅមុខ",
+        time: "03:30 PM",
+        location: "ពហុកីឡដ្ឋានខេត្ត",
+        battles: []
+      },
+      {
+        type: "adult",
+        gender: "boy",
+        sport: "អត្តពលកម្ម (យុវជន) វិញ្ញាសា៖ រត់ ១០០ម៉ែត្រ",
+        time: "03:30 PM",
+        location: "ពហុកីឡដ្ឋានខេត្ត",
+        battles:[]
+      },
+      {
+        type: "adult",
+        gender: "girl",
+        sport: "អត្តពលកម្ម (នារី) វិញ្ញាសា៖ រត់ ១០០ម៉ែត្រ",
+        time: "04:30 PM",
+        location: "ពហុកីឡដ្ឋានខេត្ត",
+        battles:[]
+      },
+
+    ]
   },
   {
-    time: "11:00 AM",
-    activity: "Football - Girls Preliminary",
-    description: "Group stage matches begin",
-    location: "Field B",
-  },
-  {
-    time: "12:30 PM",
-    activity: "Lunch Break",
-    description: "Refreshments available at the cafeteria",
-    location: "Cafeteria",
-  },
-  {
-    time: "01:30 PM",
-    activity: "Volleyball - Boys Semifinals",
-    description: "Top teams compete for finals spot",
-    location: "Court 1",
-  },
-  {
-    time: "02:00 PM",
-    activity: "Football - Semifinals",
-    description: "Boys and girls semifinals",
-    location: "Field A & B",
-  },
-  {
-    time: "03:30 PM",
-    activity: "Track & Field Events",
-    description: "100m, 200m, relay races",
-    location: "Athletics Track",
-  },
-  {
-    time: "05:00 PM",
-    activity: "Championship Finals",
-    description: "Football and volleyball finals",
-    location: "Central Stadium",
-  },
-  {
-    time: "06:30 PM",
-    activity: "Award Ceremony",
-    description: "Medals and trophies presentation",
-    location: "Central Stadium",
-  },
-  {
-    time: "07:00 PM",
-    activity: "Closing Remarks",
-    description: "Thank you message and see you next year!",
-    location: "Central Stadium",
+    day: 7,
+    date: "ថ្ងៃសៅរ៍ ទី៧ ខែកុម្ភៈ ឆ្នាំ២០២៦",
+    matches: [
+      {
+        type: "kid",
+        gender: "girl",
+        sport: "អត្តពលកម្ម (កុមារី)​ វិញ្ញាសា៖ លោតកម្ពស់",
+        time: "08:00 AM",
+        location: "ពហុកីឡដ្ឋានខេត្ត",
+        battles: []
+      },
+      {
+        type: "kid",
+        gender: "boy",
+        sport: "អត្តពលកម្ម (កុមារា)​ វិញ្ញាសា៖ លោតកម្ពស់",
+        time: "08:30 AM",
+        location: "ពហុកីឡដ្ឋានខេត្ត",
+        battles: []
+      },
+      {
+        type: "kid",
+        gender: "boy",
+        sport: "អត្តពលកម្ម​ (កុមារ) វិញ្ញាសា៖ រត់បណ្ដាក់ (៥០មx៤)",
+        time: "02:30 PM",
+        location: "ពហុកីឡដ្ឋានខេត្ត",
+        battles: []
+      },
+      {
+        type: "kid",
+        gender: "boy",
+        sport: "អត្តពលកម្ម​ (កុមារ) វិញ្ញាសា៖ (Fomula one)",
+        time: "03:30 PM",
+        location: "ពហុកីឡដ្ឋានខេត្ត",
+        battles: []
+      },
+      {
+        type: "adult",
+        gender: "girl",
+        sport: "អត្តពលកម្ម (នារី) វិញ្ញាសា៖ ដើរ ៣០០០ម៉ែត្រ",
+        time: "08:00 AM",
+        location: "ពហុកីឡដ្ឋានខេត្ត",
+        battles:[]
+      },
+      {
+        type: "adult",
+        gender: "boy",
+        sport: "អត្តពលកម្ម (យុវជន) វិញ្ញាសា៖ ដើរ ៥០០០ម៉ែត្រ",
+        time: "08:30 AM",
+        location: "ពហុកីឡដ្ឋានខេត្ត",
+        battles:[]
+      },
+      {
+        type: "adult",
+        gender: "boy",
+        sport: "អត្តពលកម្ម (យុវជន) វិញ្ញាសា៖ លោតចម្ងាយ",
+        time: "02:30 PM",
+        location: "ពហុកីឡដ្ឋានខេត្ត",
+        battles:[]
+      },
+      {
+        type: "adult",
+        gender: "girl",
+        sport: "អត្តពលកម្ម (នារី) វិញ្ញាសា៖ លោតចម្ងាយ",
+        time: "03:30 PM",
+        location: "ពហុកីឡដ្ឋានខេត្ត",
+        battles:[]
+      },
+    ]
   },
 ]
 
 export function AgendaSection() {
   const [visibleItems, setVisibleItems] = useState<Set<number>>(new Set())
+  const [selectedType, setSelectedType] = useState<"kid" | "adult">("kid")
   const itemRefs = useRef<(HTMLDivElement | null)[]>([])
 
   useEffect(() => {
@@ -103,83 +691,111 @@ export function AgendaSection() {
   }, [])
 
   return (
-    <section id="agenda" className="py-16 sm:py-24 bg-muted/30">
+    <section id="agenda" className="py-16 sm:py-24 bg-muted/30" style={{ fontFamily: "'MiSansKhmer_Semibold'" }}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 sm:mb-16 animate-fade-in">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-            Event <span className="text-primary">Agenda</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl mb-4" style={{ fontFamily: "'KhmerOSMoulLight'" }}>
+            កាលវិភាគ<span className="text-primary">ប្រកួត</span>
           </h2>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto text-pretty">
-            Your complete guide to the day's activities and competitions
+            កាលវិភាគលម្អិតនៃការប្រកួតកីឡាពីថ្ងៃទី ៣ ដល់ទី ៧
           </p>
         </div>
 
-        {/* Desktop Table View */}
-        <div className="hidden lg:block max-w-6xl mx-auto">
-          <div className="bg-card rounded-xl shadow-lg overflow-hidden border border-border">
-            <div className="bg-primary/10 border-b border-border">
-              <div className="grid grid-cols-12 gap-4 p-4">
-                <div className="col-span-2 font-bold text-sm uppercase tracking-wider">Time</div>
-                <div className="col-span-3 font-bold text-sm uppercase tracking-wider">Activity</div>
-                <div className="col-span-5 font-bold text-sm uppercase tracking-wider">Description</div>
-                <div className="col-span-2 font-bold text-sm uppercase tracking-wider">Location</div>
-              </div>
-            </div>
-            <div className="divide-y divide-border">
-              {agendaData.map((item, index) => (
-                <div
-                  key={index}
-                  ref={(el) => {
-                    itemRefs.current[index] = el
-                  }}
-                  data-index={index}
-                  className={`grid grid-cols-12 gap-4 p-4 hover:bg-muted/50 transition-all duration-300 ${
-                    visibleItems.has(index) ? "animate-slide-in-left" : "opacity-0"
-                  }`}
-                  style={{ animationDelay: `${(index % 3) * 100}ms` }}
-                >
-                  <div className="col-span-2 flex items-center">
-                    <Clock className="w-4 h-4 mr-2 text-primary flex-shrink-0" />
-                    <span className="font-semibold text-foreground">{item.time}</span>
-                  </div>
-                  <div className="col-span-3 font-medium text-foreground">{item.activity}</div>
-                  <div className="col-span-5 text-muted-foreground leading-relaxed">{item.description}</div>
-                  <div className="col-span-2 flex items-center text-sm">
-                    <MapPin className="w-3 h-3 mr-1 text-accent flex-shrink-0" />
-                    <span className="text-muted-foreground">{item.location}</span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+        {/* Type Switcher */}
+        <div className="flex justify-center gap-4 mb-8">
+          <button
+            onClick={() => setSelectedType("kid")}
+            className={`px-6 py-2 rounded-lg font-semibold transition-all ${
+              selectedType === "kid"
+                ? "bg-primary text-primary-foreground shadow-lg"
+                : "bg-muted text-foreground hover:bg-muted/80"
+            }`}
+            style={{ fontFamily: "'MiSansKhmer_Semibold'" }}
+          >
+            កុមារ
+          </button>
+          <button
+            onClick={() => setSelectedType("adult")}
+            className={`px-6 py-2 rounded-lg font-semibold transition-all ${
+              selectedType === "adult"
+                ? "bg-primary text-primary-foreground shadow-lg"
+                : "bg-muted text-foreground hover:bg-muted/80"
+            }`}
+            style={{ fontFamily: "'MiSansKhmer_Semibold'" }}
+          >
+            យុវជន
+          </button>
         </div>
 
-        {/* Mobile Card View */}
-        <div className="lg:hidden space-y-4 max-w-2xl mx-auto">
-          {agendaData.map((item, index) => (
+        {/* Days View */}
+        <div className="space-y-8 max-w-4xl mx-auto">
+          {agendaData.map((dayData, dayIndex) => (
             <div
-              key={index}
+              key={dayIndex}
               ref={(el) => {
-                itemRefs.current[index] = el
+                itemRefs.current[dayIndex] = el
               }}
-              data-index={index}
-              className={`bg-card rounded-lg shadow-md border border-border p-4 sm:p-6 hover:shadow-lg transition-all duration-300 ${
-                visibleItems.has(index) ? "animate-fade-in" : "opacity-0"
+              data-index={dayIndex}
+              className={`bg-card rounded-xl shadow-lg border border-border overflow-hidden ${
+                visibleItems.has(dayIndex) ? "animate-fade-in" : "opacity-0"
               }`}
-              style={{ animationDelay: `${(index % 3) * 100}ms` }}
+              style={{ animationDelay: `${dayIndex * 100}ms` }}
             >
-              <div className="flex items-start justify-between mb-3">
-                <div className="flex items-center">
-                  <Clock className="w-5 h-5 mr-2 text-primary flex-shrink-0" />
-                  <span className="font-bold text-lg text-foreground">{item.time}</span>
-                </div>
-                <div className="flex items-center text-sm text-muted-foreground">
-                  <MapPin className="w-4 h-4 mr-1 text-accent flex-shrink-0" />
-                  <span>{item.location}</span>
-                </div>
+              {/* Day Header */}
+              <div className="bg-primary/10 border-b border-border p-4 sm:p-6">
+                <h3 className="text-xl sm:text-2xl font-bold text-primary">
+                  {dayData.date}
+                </h3>
               </div>
-              <h3 className="font-semibold text-lg mb-2 text-foreground">{item.activity}</h3>
-              <p className="text-muted-foreground leading-relaxed">{item.description}</p>
+
+              {/* Matches for selected type */}
+              <div className="divide-y divide-border">
+                {dayData.matches
+                  .filter((match) => match.type === selectedType)
+                  .map((match, matchIndex) => (
+                    <div key={matchIndex} className="p-4 sm:p-6 hover:bg-muted/30 transition-colors">
+                      <div className="mb-4">
+                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3">
+                          <h4 className="text-lg sm:text-xl font-bold text-foreground" style={{ fontFamily: "'MiSansKhmer_Semibold'" }}>
+                            {match.sport}
+                          </h4>
+                          <div className="flex gap-4 mt-2 sm:mt-0 text-sm">
+                            <div className="flex items-center text-muted-foreground">
+                              <Clock className="w-4 h-4 mr-2 text-primary flex-shrink-0" />
+                              {match.time}
+                            </div>
+                            <div className="flex items-center text-muted-foreground">
+                              <MapPin className="w-4 h-4 mr-2 text-accent flex-shrink-0" />
+                              {match.location}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Battles */}
+                      <div className="space-y-2">
+                        {match.battles.map((battle, battleIndex) => (
+                          <div
+                            key={battleIndex}
+                            className="flex items-center justify-between p-3 bg-muted/50 rounded-lg"
+                          >
+                            <span className="font-medium text-foreground">{battle.team1}</span>
+                            <span className="text-muted-foreground text-sm">Vs</span>
+                            <span className="font-medium text-foreground">{battle.team2}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+              </div>
+
+              {/* No matches message */}
+              {dayData.matches.filter((match) => match.type === selectedType).length === 0 && (
+                <div className="p-6 text-center text-muted-foreground">
+                  គ្មានការប្រកួតក្នុងថ្ងៃនេះ
+                </div>
+              )}
             </div>
           ))}
         </div>
