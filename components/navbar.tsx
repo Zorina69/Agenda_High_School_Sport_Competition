@@ -26,8 +26,8 @@ export function Navbar() {
 
   const menuItems = [
     { label: "ទំព័រមុខ", id: "home" },
-    { label: "ប្រភេទកីឡា", id: "agenda" },
-    { label: "ការប្រកួត", id: "sports" },
+    { label: "ប្រភេទកីឡា", id: "sports" },
+    { label: "ការប្រកួត", id: "agenda" },
     { label: "អំពីយើង", id: "about" },
   ]
 

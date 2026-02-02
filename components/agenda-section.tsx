@@ -410,7 +410,7 @@ const agendaData = [
       {
         type: "kid",
         gender: "boy",
-        sport: "អត្តពលកម្ម​ (កុមារ) វិញ្ញាសា៖ ចោលកូនបាល់",
+        sport: "អត្តពលកម្មកុមារ វិញ្ញាសា៖ ចោលកូនបាល់",
         time: "02:30 PM",
         location: "ពហុកីឡដ្ឋានខេត្ត",
         battles: []
@@ -418,7 +418,7 @@ const agendaData = [
       {
         type: "kid",
         gender: "boy",
-        sport: "អត្តពលកម្ម​ (កុមារ) វិញ្ញាសា៖ ចោលដំបងមានកន្ទុយ",
+        sport: "អត្តពលកម្ម​កុមារ វិញ្ញាសា៖ ចោលដំបងមានកន្ទុយ",
         time: "03:30 PM",
         location: "ពហុកីឡដ្ឋានខេត្ត",
         battles: []
@@ -561,7 +561,7 @@ const agendaData = [
       {
         type: "kid",
         gender: "boy",
-        sport: "អត្តពលកម្ម​ (កុមារ) វិញ្ញាសា៖ រត់ឆ្លងកាត់ឧបសគ្គ (២៥មx២)",
+        sport: "អត្តពលកម្ម​កុមារ វិញ្ញាសា៖ រត់ឆ្លងកាត់ឧបសគ្គ (២៥មx២)",
         time: "02:30 PM",
         location: "ពហុកីឡដ្ឋានខេត្ត",
         battles: []
@@ -569,7 +569,7 @@ const agendaData = [
       {
         type: "kid",
         gender: "boy",
-        sport: "អត្តពលកម្ម​ (កុមារ) វិញ្ញាសា៖ លោតជើងពីរទៅមុខ",
+        sport: "អត្តពលកម្ម​កុមារ វិញ្ញាសា៖ លោតជើងពីរទៅមុខ",
         time: "03:30 PM",
         location: "ពហុកីឡដ្ឋានខេត្ត",
         battles: []
@@ -616,7 +616,7 @@ const agendaData = [
       {
         type: "kid",
         gender: "boy",
-        sport: "អត្តពលកម្ម​ (កុមារ) វិញ្ញាសា៖ រត់បណ្ដាក់ (៥០មx៤)",
+        sport: "អត្តពលកម្ម​កុមារ វិញ្ញាសា៖ រត់បណ្ដាក់ (៥០មx៤)",
         time: "02:30 PM",
         location: "ពហុកីឡដ្ឋានខេត្ត",
         battles: []
@@ -624,7 +624,7 @@ const agendaData = [
       {
         type: "kid",
         gender: "boy",
-        sport: "អត្តពលកម្ម​ (កុមារ) វិញ្ញាសា៖ (Fomula one)",
+        sport: "អត្តពលកម្ម​កុមារ វិញ្ញាសា៖ (Fomula one)",
         time: "03:30 PM",
         location: "ពហុកីឡដ្ឋានខេត្ត",
         battles: []
@@ -739,7 +739,7 @@ export function AgendaSection() {
             }`}
             style={{ fontFamily: "'MiSansKhmer_Semibold'" }}
           >
-            កុមារ
+            បឋមសិក្សា
           </button>
           <button
             onClick={() => setSelectedType("adult")}
@@ -750,7 +750,7 @@ export function AgendaSection() {
             }`}
             style={{ fontFamily: "'MiSansKhmer_Semibold'" }}
           >
-            យុវជន
+            មធ្យមសិក្សា
           </button>
         </div>
 
@@ -818,7 +818,7 @@ export function AgendaSection() {
                             ))
                           ) : (
                             <div className="text-muted-foreground text-sm italic">
-                              គ្មានម៉ាច ត្រូវប្រកួត
+                              
                             </div>
                           )}
                         </div>

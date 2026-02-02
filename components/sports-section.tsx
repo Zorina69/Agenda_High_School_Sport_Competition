@@ -73,7 +73,7 @@ export function SportsSection() {
             ប្រភេទកីឡា<span className="text-accent">ប្រកួត</span>
           </h2>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto text-pretty" style={{ fontFamily: "'MiSansKhmer_Semibold'" }}>
-            ប្រភេទកីឡាគោលទាំង៥ ប្រភេទ និងចំនួនក្រុង/ស្រុកចូលរួម
+            ប្រភេទកីឡាគោលទាំង ៥ប្រភេទ និងចំនួនក្រុង/ស្រុកចូលរួម
           </p>
         </div>
 
