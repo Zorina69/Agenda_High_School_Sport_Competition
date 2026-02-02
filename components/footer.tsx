@@ -12,7 +12,7 @@ export function Footer() {
             <p className="text-muted-foreground leading-relaxed" style={{ fontFamily: "'MiSansKhmer_Semibold'" }}>
               បញ្ជាក់៖ <br />
               - សូមចូលទៅកាន់តេលេក្រាមដើម្បីទទួលបានព័ត៌មានលម្អិតបន្ថែម<br />
-              - គណៈកម្មការរៀបចំសូមរក្សាសិទ្ធក្នុងការកែប្រែ
+              - គណៈកម្មការរៀបចំសូមរក្សាសិទ្ធិក្នុងការកែប្រែ
             </p>
           </div>
         </div>
