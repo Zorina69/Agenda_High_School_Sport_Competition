@@ -670,6 +670,32 @@ export function AgendaSection() {
   const [selectedType, setSelectedType] = useState<"kid" | "adult">("kid")
   const itemRefs = useRef<(HTMLDivElement | null)[]>([])
 
+  // Function to convert time string to 24-hour format for sorting
+  const convertTo24Hour = (timeStr: string): number => {
+    const [time, period] = timeStr.split(" ")
+    let [hours, minutes] = time.split(":").map(Number)
+    
+    if (period === "PM" && hours !== 12) {
+      hours += 12
+    } else if (period === "AM" && hours === 12) {
+      hours = 0
+    }
+    
+    return hours * 60 + minutes
+  }
+
+  // Function to sort matches by type and then by time
+  const sortMatchesByTypeAndTime = (matches: typeof agendaData[0]["matches"]) => {
+    return [...matches].sort((a, b) => {
+      // First sort by type (kid first, then adult)
+      if (a.type !== b.type) {
+        return a.type === "kid" ? -1 : 1
+      }
+      // Then sort by time (morning to evening)
+      return convertTo24Hour(a.time) - convertTo24Hour(b.time)
+    })
+  }
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -695,10 +721,10 @@ export function AgendaSection() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 sm:mb-16 animate-fade-in">
           <h2 className="text-3xl sm:text-4xl md:text-5xl mb-4" style={{ fontFamily: "'KhmerOSMoulLight'" }}>
-            កាលវិភាគ<span className="text-primary">ប្រកួត</span>
+            កម្មវិធី<span className="text-primary">ប្រកួត</span>
           </h2>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto text-pretty">
-            កាលវិភាគលម្អិតនៃការប្រកួតកីឡាពីថ្ងៃទី ៣ ដល់ទី ៧
+            កម្មវិធីប្រកួត ម៉ោង ទីតាំង និងព័ត៌មានលម្អិត
           </p>
         </div>
 
@@ -730,74 +756,85 @@ export function AgendaSection() {
 
         {/* Days View */}
         <div className="space-y-8 max-w-4xl mx-auto">
-          {agendaData.map((dayData, dayIndex) => (
-            <div
-              key={dayIndex}
-              ref={(el) => {
-                itemRefs.current[dayIndex] = el
-              }}
-              data-index={dayIndex}
-              className={`bg-card rounded-xl shadow-lg border border-border overflow-hidden ${
-                visibleItems.has(dayIndex) ? "animate-fade-in" : "opacity-0"
-              }`}
-              style={{ animationDelay: `${dayIndex * 100}ms` }}
-            >
-              {/* Day Header */}
-              <div className="bg-primary/10 border-b border-border p-4 sm:p-6">
-                <h3 className="text-xl sm:text-2xl font-bold text-primary">
-                  {dayData.date}
-                </h3>
-              </div>
+          {agendaData.map((dayData, dayIndex) => {
+            // Sort matches by type and time
+            const sortedMatches = sortMatchesByTypeAndTime(dayData.matches)
 
-              {/* Matches for selected type */}
-              <div className="divide-y divide-border">
-                {dayData.matches
-                  .filter((match) => match.type === selectedType)
-                  .map((match, matchIndex) => (
-                    <div key={matchIndex} className="p-4 sm:p-6 hover:bg-muted/30 transition-colors">
-                      <div className="mb-4">
-                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3">
-                          <h4 className="text-lg sm:text-xl font-bold text-foreground" style={{ fontFamily: "'MiSansKhmer_Semibold'" }}>
-                            {match.sport}
-                          </h4>
-                          <div className="flex gap-4 mt-2 sm:mt-0 text-sm">
-                            <div className="flex items-center text-muted-foreground">
-                              <Clock className="w-4 h-4 mr-2 text-primary flex-shrink-0" />
-                              {match.time}
-                            </div>
-                            <div className="flex items-center text-muted-foreground">
-                              <MapPin className="w-4 h-4 mr-2 text-accent flex-shrink-0" />
-                              {match.location}
+            return (
+              <div
+                key={dayIndex}
+                ref={(el) => {
+                  itemRefs.current[dayIndex] = el
+                }}
+                data-index={dayIndex}
+                className={`bg-card rounded-xl shadow-lg border border-border overflow-hidden ${
+                  visibleItems.has(dayIndex) ? "animate-fade-in" : "opacity-0"
+                }`}
+                style={{ animationDelay: `${dayIndex * 100}ms` }}
+              >
+                {/* Day Header */}
+                <div className="bg-primary/10 border-b border-border p-4 sm:p-6">
+                  <h3 className="text-xl sm:text-2xl font-bold text-primary">
+                    {dayData.date}
+                  </h3>
+                </div>
+
+                {/* Matches for selected type */}
+                <div className="divide-y divide-border">
+                  {sortedMatches
+                    .filter((match) => match.type === selectedType)
+                    .map((match, matchIndex) => (
+                      <div key={matchIndex} className="p-4 sm:p-6 hover:bg-muted/30 transition-colors">
+                        <div className="mb-4">
+                          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3">
+                            <h4 className="text-lg sm:text-xl font-bold text-foreground" style={{ fontFamily: "'MiSansKhmer_Semibold'" }}>
+                              {match.sport}
+                            </h4>
+                            <div className="flex gap-4 mt-2 sm:mt-0 text-sm">
+                              <div className="flex items-center text-muted-foreground">
+                                <Clock className="w-4 h-4 mr-2 text-primary flex-shrink-0" />
+                                {match.time}
+                              </div>
+                              <div className="flex items-center text-muted-foreground">
+                                <MapPin className="w-4 h-4 mr-2 text-accent flex-shrink-0" />
+                                {match.location}
+                              </div>
                             </div>
                           </div>
                         </div>
-                      </div>
 
-                      {/* Battles */}
-                      <div className="space-y-2">
-                        {match.battles.map((battle, battleIndex) => (
-                          <div
-                            key={battleIndex}
-                            className="flex items-center justify-between p-3 bg-muted/50 rounded-lg"
-                          >
-                            <span className="font-medium text-foreground">{battle.team1}</span>
-                            <span className="text-muted-foreground text-sm">Vs</span>
-                            <span className="font-medium text-foreground">{battle.team2}</span>
-                          </div>
-                        ))}
+                        {/* Battles */}
+                        <div className="space-y-2">
+                          {match.battles.length > 0 ? (
+                            match.battles.map((battle, battleIndex) => (
+                              <div
+                                key={battleIndex}
+                                className="flex items-center justify-between p-3 bg-muted/50 rounded-lg"
+                              >
+                                <span className="font-medium text-foreground">{battle.team1}</span>
+                                <span className="text-muted-foreground text-sm">Vs</span>
+                                <span className="font-medium text-foreground">{battle.team2}</span>
+                              </div>
+                            ))
+                          ) : (
+                            <div className="text-muted-foreground text-sm italic">
+                              គ្មានម៉ាច ត្រូវប្រកួត
+                            </div>
+                          )}
+                        </div>
                       </div>
-                    </div>
-                  ))}
-              </div>
-
-              {/* No matches message */}
-              {dayData.matches.filter((match) => match.type === selectedType).length === 0 && (
-                <div className="p-6 text-center text-muted-foreground">
-                  គ្មានការប្រកួតក្នុងថ្ងៃនេះ
+                    ))}
                 </div>
-              )}
-            </div>
-          ))}
+
+                {/* No matches message */}
+                {sortedMatches.filter((match) => match.type === selectedType).length === 0 && (
+                  <div className="p-6 text-center text-muted-foreground">
+                    គ្មានការប្រកួតក្នុងថ្ងៃនេះ
+                  </div>
+                )}
+              </div>
+            )
+          })}
         </div>
       </div>
     </section>
